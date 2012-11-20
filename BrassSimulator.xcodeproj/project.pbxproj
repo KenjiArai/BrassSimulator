@@ -1,0 +1,297 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		639AAAD7165B8B7100B71732 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 639AAAD6165B8B7100B71732 /* UIKit.framework */; };
+		639AAAD9165B8B7100B71732 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 639AAAD8165B8B7100B71732 /* Foundation.framework */; };
+		639AAADB165B8B7100B71732 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 639AAADA165B8B7100B71732 /* CoreGraphics.framework */; };
+		639AAAE1165B8B7100B71732 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 639AAADF165B8B7100B71732 /* InfoPlist.strings */; };
+		639AAAE3165B8B7100B71732 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 639AAAE2165B8B7100B71732 /* main.m */; };
+		639AAAE7165B8B7100B71732 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 639AAAE6165B8B7100B71732 /* AppDelegate.m */; };
+		639AAAE9165B8B7100B71732 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 639AAAE8165B8B7100B71732 /* Default.png */; };
+		639AAAEB165B8B7100B71732 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 639AAAEA165B8B7100B71732 /* Default@2x.png */; };
+		639AAAED165B8B7100B71732 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 639AAAEC165B8B7100B71732 /* Default-568h@2x.png */; };
+		639AAAF0165B8B7100B71732 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639AAAEF165B8B7100B71732 /* ViewController.m */; };
+		639AAAF3165B8B7100B71732 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 639AAAF1165B8B7100B71732 /* ViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		639AAAD2165B8B7100B71732 /* BrassSimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrassSimulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		639AAAD6165B8B7100B71732 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		639AAAD8165B8B7100B71732 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		639AAADA165B8B7100B71732 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		639AAADE165B8B7100B71732 /* BrassSimulator-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BrassSimulator-Info.plist"; sourceTree = "<group>"; };
+		639AAAE0165B8B7100B71732 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		639AAAE2165B8B7100B71732 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		639AAAE4165B8B7100B71732 /* BrassSimulator-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BrassSimulator-Prefix.pch"; sourceTree = "<group>"; };
+		639AAAE5165B8B7100B71732 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		639AAAE6165B8B7100B71732 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		639AAAE8165B8B7100B71732 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		639AAAEA165B8B7100B71732 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		639AAAEC165B8B7100B71732 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		639AAAEE165B8B7100B71732 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		639AAAEF165B8B7100B71732 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		639AAAF2165B8B7100B71732 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		639AAACF165B8B7100B71732 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				639AAAD7165B8B7100B71732 /* UIKit.framework in Frameworks */,
+				639AAAD9165B8B7100B71732 /* Foundation.framework in Frameworks */,
+				639AAADB165B8B7100B71732 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		639AAAC7165B8B7100B71732 = {
+			isa = PBXGroup;
+			children = (
+				639AAADC165B8B7100B71732 /* BrassSimulator */,
+				639AAAD5165B8B7100B71732 /* Frameworks */,
+				639AAAD3165B8B7100B71732 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		639AAAD3165B8B7100B71732 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				639AAAD2165B8B7100B71732 /* BrassSimulator.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		639AAAD5165B8B7100B71732 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				639AAAD6165B8B7100B71732 /* UIKit.framework */,
+				639AAAD8165B8B7100B71732 /* Foundation.framework */,
+				639AAADA165B8B7100B71732 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		639AAADC165B8B7100B71732 /* BrassSimulator */ = {
+			isa = PBXGroup;
+			children = (
+				639AAAE5165B8B7100B71732 /* AppDelegate.h */,
+				639AAAE6165B8B7100B71732 /* AppDelegate.m */,
+				639AAAEE165B8B7100B71732 /* ViewController.h */,
+				639AAAEF165B8B7100B71732 /* ViewController.m */,
+				639AAAF1165B8B7100B71732 /* ViewController.xib */,
+				639AAADD165B8B7100B71732 /* Supporting Files */,
+			);
+			path = BrassSimulator;
+			sourceTree = "<group>";
+		};
+		639AAADD165B8B7100B71732 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				639AAADE165B8B7100B71732 /* BrassSimulator-Info.plist */,
+				639AAADF165B8B7100B71732 /* InfoPlist.strings */,
+				639AAAE2165B8B7100B71732 /* main.m */,
+				639AAAE4165B8B7100B71732 /* BrassSimulator-Prefix.pch */,
+				639AAAE8165B8B7100B71732 /* Default.png */,
+				639AAAEA165B8B7100B71732 /* Default@2x.png */,
+				639AAAEC165B8B7100B71732 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		639AAAD1165B8B7100B71732 /* BrassSimulator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 639AAAF6165B8B7100B71732 /* Build configuration list for PBXNativeTarget "BrassSimulator" */;
+			buildPhases = (
+				639AAACE165B8B7100B71732 /* Sources */,
+				639AAACF165B8B7100B71732 /* Frameworks */,
+				639AAAD0165B8B7100B71732 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BrassSimulator;
+			productName = BrassSimulator;
+			productReference = 639AAAD2165B8B7100B71732 /* BrassSimulator.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		639AAAC9165B8B7100B71732 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = KenjiArai;
+			};
+			buildConfigurationList = 639AAACC165B8B7100B71732 /* Build configuration list for PBXProject "BrassSimulator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 639AAAC7165B8B7100B71732;
+			productRefGroup = 639AAAD3165B8B7100B71732 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				639AAAD1165B8B7100B71732 /* BrassSimulator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		639AAAD0165B8B7100B71732 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				639AAAE1165B8B7100B71732 /* InfoPlist.strings in Resources */,
+				639AAAE9165B8B7100B71732 /* Default.png in Resources */,
+				639AAAEB165B8B7100B71732 /* Default@2x.png in Resources */,
+				639AAAED165B8B7100B71732 /* Default-568h@2x.png in Resources */,
+				639AAAF3165B8B7100B71732 /* ViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		639AAACE165B8B7100B71732 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				639AAAE3165B8B7100B71732 /* main.m in Sources */,
+				639AAAE7165B8B7100B71732 /* AppDelegate.m in Sources */,
+				639AAAF0165B8B7100B71732 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		639AAADF165B8B7100B71732 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				639AAAE0165B8B7100B71732 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		639AAAF1165B8B7100B71732 /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				639AAAF2165B8B7100B71732 /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		639AAAF4165B8B7100B71732 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		639AAAF5165B8B7100B71732 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		639AAAF7165B8B7100B71732 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BrassSimulator/BrassSimulator-Prefix.pch";
+				INFOPLIST_FILE = "BrassSimulator/BrassSimulator-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		639AAAF8165B8B7100B71732 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BrassSimulator/BrassSimulator-Prefix.pch";
+				INFOPLIST_FILE = "BrassSimulator/BrassSimulator-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		639AAACC165B8B7100B71732 /* Build configuration list for PBXProject "BrassSimulator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				639AAAF4165B8B7100B71732 /* Debug */,
+				639AAAF5165B8B7100B71732 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		639AAAF6165B8B7100B71732 /* Build configuration list for PBXNativeTarget "BrassSimulator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				639AAAF7165B8B7100B71732 /* Debug */,
+				639AAAF8165B8B7100B71732 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 639AAAC9165B8B7100B71732 /* Project object */;
+}
