@@ -22,10 +22,6 @@ static const int ICON_NUM = 3;
     AVAudioPlayer *soundNote[NOTE_NUM];
     NSMutableArray *melodyIcon;
 
-//    NSString *path;
-//    NSURL *url;
-//    NSArray *melody;
-    
     NSString *mTitle;
     NSNumber *mTempo;
     NSNumber *mScale;
@@ -34,12 +30,16 @@ static const int ICON_NUM = 3;
     NSArray *mLength;
     NSArray *mActive;
 
-//    int idxMelody;
-//    float iconHeight;
-//    float iconTop;
-//    float iconBottom;
     int idxPlay;
     bool playing;
+    
+//    float playPosition;
+//    
+//    BOOL isTimerDidFireSetup;
+//    UIImageView *currentIcon;
+//    float iconTop;
+//    float iconBottom;
+
     
 }
 @end
@@ -49,24 +49,20 @@ static const int ICON_NUM = 3;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
     
     NSString *path;
-    v = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)] autorelease];
-    v.backgroundColor = [UIColor redColor];
-    [self.view addSubview:v];
-    
-    int i;
-    for (i = 0; i < NOTE_NUM; i++) {
+    for (int i = 0; i < NOTE_NUM; i++) {
         NSString *noteName = [NSString stringWithFormat:@"%02d", i];
         path = [[NSBundle mainBundle] pathForResource:noteName ofType:@"mp3"];
         NSURL *url = [NSURL fileURLWithPath:path];
         soundNote[i] = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+//        [soundNote[i] setVolume:0];
+//        [soundNote[i] setNumberOfLoops:-1];
+//        [soundNote[i] play];
+
     }
     
-    int idxMelody = 2;
-    mNote = [[NSArray alloc] init];
-    
+    int idxMelody = 1;
     path = [[NSBundle mainBundle] pathForResource:@"userPlayList" ofType:@"plist"];
     NSArray *melody = [NSArray arrayWithContentsOfFile:path];
     mTitle = [[melody[idxMelody] objectForKey:@"Title"] retain];
@@ -75,9 +71,6 @@ static const int ICON_NUM = 3;
     
     [melodyTilte setText:mTitle];
 
-//    mNote = [melody[idxMelody] objectForKey:@"Note"];
-//    mLength = [melody[idxMelody] objectForKey:@"Length"];
-//    mActive = [melody[idxMelody] objectForKey:@"Activate"];
     mNote = [[melody[idxMelody] objectForKey:@"Note"] retain];
     mLength = [[melody[idxMelody] objectForKey:@"Length"] retain];
     mActive = [[melody[idxMelody] objectForKey:@"Activate"] retain];
@@ -89,16 +82,6 @@ static const int ICON_NUM = 3;
 
 - (void)createNote
 {
-    
-//    path = [[NSBundle mainBundle] pathForResource:@"userPlayList" ofType:@"plist"];
-//    melody = [NSArray arrayWithContentsOfFile:path];
-//    
-//    mScale = [melody[idxMelody] objectForKey:@"Scale"];
-    
-//    mNote = [melody[idxMelody] objectForKey:@"Note"];
-//    mLength = [melody[idxMelody] objectForKey:@"Length"];
-//    mActive = [melody[idxMelody] objectForKey:@"Activate"];
-
     NSString *path = [[NSBundle mainBundle] pathForResource:@"fingeringList" ofType:@"plist"];
     NSArray *fingeringToNote = [NSArray arrayWithContentsOfFile:path];
     int fingering[ICON_NUM];
@@ -164,16 +147,10 @@ static const int ICON_NUM = 3;
 
 - (IBAction)pushStop:(id)sender
 {
-//    path = [[NSBundle mainBundle] pathForResource:@"userPlayList" ofType:@"plist"];
-//    melody = [NSArray arrayWithContentsOfFile:path];
-    
-//    mScale = [melody[idxMelody] objectForKey:@"Scale"];
-//    mNote = [melody[idxMelody] objectForKey:@"Note"];
-
     btnPlay.alpha = 1;
     if (idxPlay < [mNote count] ) {
         int note = [mNote[idxPlay] intValue] + [mScale intValue];
-        NSLog(@"idxPlay = %d", idxPlay);
+
         if ([soundNote[note] isPlaying]) {
             [soundNote[note] stop];
             [soundNote[note] setCurrentTime:0];
@@ -189,58 +166,26 @@ static const int ICON_NUM = 3;
 {
     btnPlay.alpha = 0;
     
-//    path = [[NSBundle mainBundle] pathForResource:@"userPlayList" ofType:@"plist"];
-//    melody = [NSArray arrayWithContentsOfFile:path];
-    
-    int tempo = [mTempo
-                 intValue];
-    
-    UIImageView *img = melodyIcon[0];
-    NSLog(@"iconY = %f", img.frame.origin.y - mScrollView.contentOffset.y);
-    playing = false;
     if (idxPlay >= [mNote count]) {
         btnPlay.alpha = 1;
     } else {
-    
-        scrollTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 / tempo
+        playing = false;
+        scrollTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 / ([mTempo intValue] /2)
                                                        target:self
                                                      selector:@selector(timerDidFire:)
                                                      userInfo:nil
                                                       repeats:YES];
-        logTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
-                                                    target:self
-                                                  selector:@selector(checkLog:)
-                                                  userInfo:nil
-                                                   repeats:YES];
-    } 
-}
-
-- (void)checkLog:(NSTimer*)timer
-{
-    NSLog(@"y =  %f", mScrollView.contentOffset.y);
-    
-    UIImageView *img = melodyIcon[0];
-    NSLog(@"iconY = %f", img.frame.origin.y - mScrollView.contentOffset.y);
+    }
 }
 
 - (void)timerDidFire:(NSTimer*)timer
 {
-//    path = [[NSBundle mainBundle] pathForResource:@"userPlayList" ofType:@"plist"];
-//    melody = [NSArray arrayWithContentsOfFile:path];
-//        
-//    mScale = [melody[idxMelody] objectForKey:@"Scale"];
-    
-//    mNote = [melody[idxMelody] objectForKey:@"Note"];
-//    mLength = [melody[idxMelody] objectForKey:@"Length"];
-//    mActive = [melody[idxMelody] objectForKey:@"Activate"];
-    
     CGPoint p = mScrollView.contentOffset;
-    p.y--;
+    p.y -= 2;
     mScrollView.contentOffset = p;
 
     if (idxPlay >= [mNote count]) {
         if (mScrollView.contentOffset.y <= 0 ) {
-//            idxPlay--;
             btnPlay.alpha = 1;
             [scrollTimer invalidate];
             [logTimer invalidate];
@@ -269,51 +214,6 @@ static const int ICON_NUM = 3;
     }
 }
 
-- (void)next:(NSNumber*)prev
-{
-//    NSString *path = [[NSBundle mainBundle] pathForResource:@"userPlayList" ofType:@"plist"];
-//    NSArray *melody = [NSArray arrayWithContentsOfFile:path];
-//    
-//    NSNumber *mTempo = [melody[1] objectForKey:@"Tempo"];
-//    NSNumber *mScale = [melody[1] objectForKey:@"Scale"];
-//    
-//    NSArray *mNote = [melody[1] objectForKey:@"Note"];
-//    NSArray *mLength = [melody[1] objectForKey:@"Length"];
-//    NSArray *mActivate = [melody[1] objectForKey:@"Activate"];
-
-    int note;
-    int no = [prev intValue];
-    
-//    int noteNo = no + [scale intValue];
-    if ( no > -1 ) {
-        note = [mNote[no] intValue] + [mScale intValue];
-        [soundNote[note] stop];
-        [soundNote[note] setCurrentTime:0];
-    }
-    
-    no++;
-    if ( [mActive count] <= no ) return;
-    
-    note = [mNote[no] intValue] + [mScale intValue];
-    double melodyLength = [mLength[no] doubleValue] / ([mTempo intValue] / 60);
-    
-    if ([mActive[no] intValue]) {
-        [soundNote[note] play];
-    }
-
-    [self performSelector:@selector(next:) withObject:[NSNumber numberWithInt:no] afterDelay:melodyLength];
-}
-
-- (void)runloop:(id)sender
-{
-    int x = v.center.x;
-    int y = v.center.y;
-    v.center = CGPointMake(x +1, y +1);
-//    y= 0;
-    int scrollTop = mScrollView.frame.origin.y;
-    int scrollHeight =mScrollView.frame.size.height;
-    mScrollView.frame = CGRectMake(0, scrollTop +1, 320, scrollHeight +11);
-}
 - (void)dealloc
 {
     // サウンドの解放処理
@@ -329,7 +229,6 @@ static const int ICON_NUM = 3;
     [mActive release];
     
     [scrollTimer release];
-    [logTimer release];
     [melodyIcon release];
     
     [super dealloc];
