@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  BrassSimulator
 //
-//  Created by KenjiArai on 2012/11/20.
+//  Created by KenjiArai on 2012/10/23.
 //  Copyright (c) 2012年 KenjiArai. All rights reserved.
 //
 
