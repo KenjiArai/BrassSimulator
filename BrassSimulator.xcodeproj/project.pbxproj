@@ -20,7 +20,6 @@
 		639AAAFE165B8BB400B71732 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639AAAFC165B8BB400B71732 /* ViewController.m */; };
 		639AAB0A165B8CEF00B71732 /* defaultPlayList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 639AAB07165B8CEF00B71732 /* defaultPlayList.plist */; };
 		639AAB0B165B8CEF00B71732 /* fingeringList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 639AAB08165B8CEF00B71732 /* fingeringList.plist */; };
-		639AAB0C165B8CEF00B71732 /* userPlayList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 639AAB09165B8CEF00B71732 /* userPlayList.plist */; };
 		639AAB15165B8D1300B71732 /* f0085330_0204323.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 639AAB0F165B8D1300B71732 /* f0085330_0204323.jpg */; };
 		639AAB16165B8D1300B71732 /* guideline.png in Resources */ = {isa = PBXBuildFile; fileRef = 639AAB10165B8D1300B71732 /* guideline.png */; };
 		639AAB17165B8D1300B71732 /* offValve.png in Resources */ = {isa = PBXBuildFile; fileRef = 639AAB11165B8D1300B71732 /* offValve.png */; };
@@ -186,9 +185,9 @@
 			children = (
 				639AAB0E165B8D1300B71732 /* brsm_img */,
 				639AAB1B165B8D2B00B71732 /* sound */,
+				639AAB09165B8CEF00B71732 /* userPlayList.plist */,
 				639AAB07165B8CEF00B71732 /* defaultPlayList.plist */,
 				639AAB08165B8CEF00B71732 /* fingeringList.plist */,
-				639AAB09165B8CEF00B71732 /* userPlayList.plist */,
 				639AAADE165B8B7100B71732 /* BrassSimulator-Info.plist */,
 				639AAADF165B8B7100B71732 /* InfoPlist.strings */,
 				639AAAE2165B8B7100B71732 /* main.m */,
@@ -311,7 +310,6 @@
 				639AAAF3165B8B7100B71732 /* ViewController.xib in Resources */,
 				639AAB0A165B8CEF00B71732 /* defaultPlayList.plist in Resources */,
 				639AAB0B165B8CEF00B71732 /* fingeringList.plist in Resources */,
-				639AAB0C165B8CEF00B71732 /* userPlayList.plist in Resources */,
 				639AAB15165B8D1300B71732 /* f0085330_0204323.jpg in Resources */,
 				639AAB16165B8D1300B71732 /* guideline.png in Resources */,
 				639AAB17165B8D1300B71732 /* offValve.png in Resources */,
