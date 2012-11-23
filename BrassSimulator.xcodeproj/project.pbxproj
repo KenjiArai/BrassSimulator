@@ -189,6 +189,7 @@
 				63C56D73165FCD830046A3DE /* sound */,
 				639AAB0E165B8D1300B71732 /* brsm_img */,
 				639AAB07165B8CEF00B71732 /* defaultPlayList.plist */,
+				63CDC585165FEB3E00ABE425 /* userPlayList.plist */,
 				639AAB08165B8CEF00B71732 /* fingeringList.plist */,
 				639AAADE165B8B7100B71732 /* BrassSimulator-Info.plist */,
 				639AAADF165B8B7100B71732 /* InfoPlist.strings */,
@@ -197,7 +198,6 @@
 				639AAAE8165B8B7100B71732 /* Default.png */,
 				639AAAEA165B8B7100B71732 /* Default@2x.png */,
 				639AAAEC165B8B7100B71732 /* Default-568h@2x.png */,
-				63CDC585165FEB3E00ABE425 /* userPlayList.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
