@@ -54,7 +54,7 @@ static const int ICON_NUM = 3;
     
     for (int i = 0; i < NOTE_NUM; i++) {
         noteName = [NSString stringWithFormat:@"%02d", i];
-        path = [[NSBundle mainBundle] pathForResource:noteName ofType:@"mp3"];
+        path = [[NSBundle mainBundle] pathForResource:noteName ofType:@"aiff"];
         NSURL *url = [NSURL fileURLWithPath:path];
         soundNote[i] = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
         //        [soundNote[i] prepareToPlay];
