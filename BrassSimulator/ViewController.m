@@ -17,10 +17,9 @@ static const int ICON_NUM = 3;
     UIView *v;
     
     NSTimer *scrollTimer;
-    NSTimer *logTimer;
     
     AVAudioPlayer *soundNote[NOTE_NUM];
-//    NSMutableArray *melodyIcon;
+    NSMutableArray *melodyIcon;
     UIImageView *firstIcon;
     
     NSString *mTitle;
@@ -48,14 +47,11 @@ static const int ICON_NUM = 3;
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    
-//    v = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)] autorelease];
-//    v.backgroundColor = [UIColor redColor];
-//    [self.view addSubview:v];
+//    [super viewDidLoad];
     
     NSString *noteName;
     NSString *path;
+    
     for (int i = 0; i < NOTE_NUM; i++) {
         noteName = [NSString stringWithFormat:@"%02d", i];
         path = [[NSBundle mainBundle] pathForResource:noteName ofType:@"mp3"];
@@ -68,6 +64,7 @@ static const int ICON_NUM = 3;
     }
     
     int idxMelody = 1;
+    mNote = [[NSArray alloc] init];
     
     path = [[NSBundle mainBundle] pathForResource:@"userPlayList" ofType:@"plist"];
     NSArray *melody = [NSArray arrayWithContentsOfFile:path];
@@ -82,7 +79,7 @@ static const int ICON_NUM = 3;
     mActive = [[melody[idxMelody] objectForKey:@"Activate"] retain];
     
     [self createNote];
-    idxPlay =0;
+//    idxPlay =0;
 }
 
 
@@ -92,7 +89,7 @@ static const int ICON_NUM = 3;
     NSArray *fingeringToNote = [NSArray arrayWithContentsOfFile:path];
     int fingering[ICON_NUM];
     
-//    melodyIcon = [[NSMutableArray alloc] init];
+    melodyIcon = [[NSMutableArray alloc] init];
     
     float verticalPoint[ICON_NUM];
     verticalPoint[0] = guide01.center.x;
@@ -141,10 +138,10 @@ static const int ICON_NUM = 3;
             icon[j].center = CGPointMake(verticalPoint[j], iconY -icon[j].frame.size.height /2);
             [mScrollView addSubview:icon[j]];
         }
-        if (i == 0) {
-            firstIcon = icon[0];
-        }
-//        [melodyIcon addObject:icon[0]];
+//        if (i == 0) {
+//            firstIcon = icon[0];
+//        }
+        [melodyIcon addObject:icon[0]];
         float iconHeight = icon[0].frame.size.height;
         iconY -= iconHeight;
         totalIconHeight += iconHeight;
@@ -152,16 +149,32 @@ static const int ICON_NUM = 3;
             [icon[j] release];
         }
     }
+    
 }
 
 - (IBAction)pushStop:(id)sender
+{
+    for (int i = 0; i < NOTE_NUM; i++) {
+        [soundNote[i] setVolume:0];
+    }
+    if ([scrollTimer isValid]) {
+        [scrollTimer invalidate];
+    }
+    [melodyIcon release];
+    btnPlay.alpha = 1;
+    idxPlay = 0;
+    [self createNote];
+}
+
+- (IBAction)pushPose:(id)sender
 {
     btnPlay.alpha = 1;
     if (idxPlay < [mNote count] ) {
         int note = [mNote[idxPlay] intValue] + [mScale intValue];
         if ([soundNote[note] isPlaying]) {
-            [soundNote[note] stop];
+            [soundNote[note] setVolume:0];
             [soundNote[note] setCurrentTime:0];
+            playing = false;
         }
     }
     if ([scrollTimer isValid]) {
@@ -171,24 +184,31 @@ static const int ICON_NUM = 3;
 
 - (IBAction)pushPlay:(id)sender
 {
+    UIImageView *img;
     btnPlay.alpha = 0;
-    float tempo = [mTempo intValue];
     
     playing = false;
     if (idxPlay >= [mNote count]) {
         btnPlay.alpha = 1;
     } else {
-
-        iconTop = firstIcon.frame.origin.y - mScrollView.contentOffset.y;
-        iconBottom = iconTop + firstIcon.frame.size.height;
-        playPosition = mScrollView.frame.size.height - valve01.frame.size.height;
-        isTimerDidFireSetup = NO;
         
-        scrollTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 / (tempo / 2.0 )
+        playPosition = mScrollView.frame.size.height - valve01.frame.size.height;
+
+        for (int i = 0; i < melodyIcon.count; i++) {
+            img = melodyIcon[i];
+            iconTop = img.frame.origin.y - mScrollView.contentOffset.y;
+            iconBottom = iconTop + img.frame.size.height;
+            if (iconBottom <= playPosition) {
+                idxPlay = i;
+                firstIcon = img;
+                break;
+            }
+        }
+        scrollTimer = [[NSTimer scheduledTimerWithTimeInterval:1.0 / ([mTempo intValue] / 2.0 )
                                                        target:self
                                                      selector:@selector(timerDidFire:)
                                                      userInfo:nil
-                                                      repeats:YES];
+                                                      repeats:YES] retain];
     }
 }
 
@@ -211,7 +231,6 @@ static const int ICON_NUM = 3;
         if (mScrollView.contentOffset.y <= 0 ) {
             btnPlay.alpha = 1;
             [scrollTimer invalidate];
-            [logTimer invalidate];
         }
     } else {
         
@@ -308,7 +327,6 @@ static const int ICON_NUM = 3;
     [mActive release];
     
     [scrollTimer release];
-    [logTimer release];
     
     [super dealloc];
 }
@@ -317,13 +335,11 @@ static const int ICON_NUM = 3;
 {
     for (int i = 0; i < NOTE_NUM; i++) {
         
-        if([soundNote[i] isPlaying]) {
-            //再生中は停止する
-            [soundNote[i] stop];
-            [soundNote[i] setCurrentTime:0];
-        }
+        //再生中は停止する
+        [soundNote[i] setVolume:0];
+        [soundNote[i] setCurrentTime:0];
     }
-    [soundNote[0] play];
+    [soundNote[0] setVolume:1.0];
 }
 
 - (void)didReceiveMemoryWarning

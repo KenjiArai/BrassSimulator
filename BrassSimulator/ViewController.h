@@ -10,7 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <AVFoundation/AVAudioPlayer.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UIScrollViewDelegate, UIScrollViewAccessibilityDelegate>
 {
 //    IBOutlet UILabel *melodyTilte;
     
