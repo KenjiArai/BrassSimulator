@@ -61,7 +61,7 @@
 		63C56DB3165FCD830046A3DE /* 30.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 63C56D92165FCD830046A3DE /* 30.aiff */; };
 		63C56DB4165FCD830046A3DE /* 31.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 63C56D93165FCD830046A3DE /* 31.aiff */; };
 		63C56DB5165FCD830046A3DE /* 32.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 63C56D94165FCD830046A3DE /* 32.aiff */; };
-		63CDC586165FEB3E00ABE425 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63CDC585165FEB3E00ABE425 /* Property List.plist */; };
+		63CDC586165FEB3E00ABE425 /* userPlayList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63CDC585165FEB3E00ABE425 /* userPlayList.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,7 +124,7 @@
 		63C56D92165FCD830046A3DE /* 30.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = 30.aiff; sourceTree = "<group>"; };
 		63C56D93165FCD830046A3DE /* 31.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = 31.aiff; sourceTree = "<group>"; };
 		63C56D94165FCD830046A3DE /* 32.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = 32.aiff; sourceTree = "<group>"; };
-		63CDC585165FEB3E00ABE425 /* Property List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
+		63CDC585165FEB3E00ABE425 /* userPlayList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = userPlayList.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,7 +197,7 @@
 				639AAAE8165B8B7100B71732 /* Default.png */,
 				639AAAEA165B8B7100B71732 /* Default@2x.png */,
 				639AAAEC165B8B7100B71732 /* Default-568h@2x.png */,
-				63CDC585165FEB3E00ABE425 /* Property List.plist */,
+				63CDC585165FEB3E00ABE425 /* userPlayList.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -354,7 +354,7 @@
 				63C56DB3165FCD830046A3DE /* 30.aiff in Resources */,
 				63C56DB4165FCD830046A3DE /* 31.aiff in Resources */,
 				63C56DB5165FCD830046A3DE /* 32.aiff in Resources */,
-				63CDC586165FEB3E00ABE425 /* Property List.plist in Resources */,
+				63CDC586165FEB3E00ABE425 /* userPlayList.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
