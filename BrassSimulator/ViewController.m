@@ -67,8 +67,8 @@ static const int ICON_NUM = 3;
     int idxMelody = 2;
     mNote = [[NSArray alloc] init];
     
-    path = [[NSBundle mainBundle] pathForResource:@"userPlayList" ofType:@"plist"];
-    NSArray *melody = [NSArray arrayWithContentsOfFile:path];
+    NSString *mPath = [[NSBundle mainBundle] pathForResource:@"Property List" ofType:@"plist"];
+    NSArray *melody = [NSArray arrayWithContentsOfFile:mPath];
     mTitle = [[melody[idxMelody] objectForKey:@"Title"] retain];
     mTempo = [[melody[idxMelody] objectForKey:@"Tempo"] retain];
     mScale = [[melody[idxMelody] objectForKey:@"Scale"] retain];

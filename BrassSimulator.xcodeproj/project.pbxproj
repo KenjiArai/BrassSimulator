@@ -61,6 +61,7 @@
 		63C56DB3165FCD830046A3DE /* 30.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 63C56D92165FCD830046A3DE /* 30.aiff */; };
 		63C56DB4165FCD830046A3DE /* 31.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 63C56D93165FCD830046A3DE /* 31.aiff */; };
 		63C56DB5165FCD830046A3DE /* 32.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 63C56D94165FCD830046A3DE /* 32.aiff */; };
+		63CDC586165FEB3E00ABE425 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63CDC585165FEB3E00ABE425 /* Property List.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,7 +83,6 @@
 		639AAAFC165B8BB400B71732 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		639AAB07165B8CEF00B71732 /* defaultPlayList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defaultPlayList.plist; sourceTree = "<group>"; };
 		639AAB08165B8CEF00B71732 /* fingeringList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fingeringList.plist; sourceTree = "<group>"; };
-		639AAB09165B8CEF00B71732 /* userPlayList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = userPlayList.plist; sourceTree = "<group>"; };
 		639AAB0F165B8D1300B71732 /* f0085330_0204323.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = f0085330_0204323.jpg; sourceTree = "<group>"; };
 		639AAB10165B8D1300B71732 /* guideline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guideline.png; sourceTree = "<group>"; };
 		639AAB11165B8D1300B71732 /* offValve.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = offValve.png; sourceTree = "<group>"; };
@@ -124,6 +124,7 @@
 		63C56D92165FCD830046A3DE /* 30.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = 30.aiff; sourceTree = "<group>"; };
 		63C56D93165FCD830046A3DE /* 31.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = 31.aiff; sourceTree = "<group>"; };
 		63C56D94165FCD830046A3DE /* 32.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = 32.aiff; sourceTree = "<group>"; };
+		63CDC585165FEB3E00ABE425 /* Property List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,7 +188,6 @@
 			children = (
 				63C56D73165FCD830046A3DE /* sound */,
 				639AAB0E165B8D1300B71732 /* brsm_img */,
-				639AAB09165B8CEF00B71732 /* userPlayList.plist */,
 				639AAB07165B8CEF00B71732 /* defaultPlayList.plist */,
 				639AAB08165B8CEF00B71732 /* fingeringList.plist */,
 				639AAADE165B8B7100B71732 /* BrassSimulator-Info.plist */,
@@ -197,6 +197,7 @@
 				639AAAE8165B8B7100B71732 /* Default.png */,
 				639AAAEA165B8B7100B71732 /* Default@2x.png */,
 				639AAAEC165B8B7100B71732 /* Default-568h@2x.png */,
+				63CDC585165FEB3E00ABE425 /* Property List.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -353,6 +354,7 @@
 				63C56DB3165FCD830046A3DE /* 30.aiff in Resources */,
 				63C56DB4165FCD830046A3DE /* 31.aiff in Resources */,
 				63C56DB5165FCD830046A3DE /* 32.aiff in Resources */,
+				63CDC586165FEB3E00ABE425 /* Property List.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
