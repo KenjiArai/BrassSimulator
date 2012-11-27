@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		63357220166460BA00A195C6 /* brsm.ppt in Resources */ = {isa = PBXBuildFile; fileRef = 6335721F166460BA00A195C6 /* brsm.ppt */; };
 		639AAAD7165B8B7100B71732 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 639AAAD6165B8B7100B71732 /* UIKit.framework */; };
 		639AAAD9165B8B7100B71732 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 639AAAD8165B8B7100B71732 /* Foundation.framework */; };
 		639AAADB165B8B7100B71732 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 639AAADA165B8B7100B71732 /* CoreGraphics.framework */; };
@@ -68,7 +67,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6335721F166460BA00A195C6 /* brsm.ppt */ = {isa = PBXFileReference; lastKnownFileType = file; path = brsm.ppt; sourceTree = "<group>"; };
 		639AAAD2165B8B7100B71732 /* BrassSimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrassSimulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		639AAAD6165B8B7100B71732 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		639AAAD8165B8B7100B71732 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -192,7 +190,6 @@
 		639AAADD165B8B7100B71732 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6335721F166460BA00A195C6 /* brsm.ppt */,
 				63C56D73165FCD830046A3DE /* sound */,
 				639AAB0E165B8D1300B71732 /* brsm_img */,
 				639AAB07165B8CEF00B71732 /* defaultPlayList.plist */,
@@ -366,7 +363,6 @@
 				63CDC586165FEB3E00ABE425 /* userPlayList.plist in Resources */,
 				63CDC58916625DA000ABE425 /* guide_m.png in Resources */,
 				63CDC58B16625DB200ABE425 /* play_m.png in Resources */,
-				63357220166460BA00A195C6 /* brsm.ppt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
