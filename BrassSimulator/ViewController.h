@@ -17,6 +17,8 @@
 
     IBOutlet UIButton *btnPlay;
     IBOutlet UIButton *btnStop;
+    IBOutlet UIButton *btnPlayMode;
+    IBOutlet UIButton *btnGuideMode;
     IBOutlet UIScrollView *mScrollView;
     IBOutlet UIImageView *guide01;
     IBOutlet UIImageView *guide02;

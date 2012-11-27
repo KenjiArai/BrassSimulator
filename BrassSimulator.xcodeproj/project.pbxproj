@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63357220166460BA00A195C6 /* brsm.ppt in Resources */ = {isa = PBXBuildFile; fileRef = 6335721F166460BA00A195C6 /* brsm.ppt */; };
 		639AAAD7165B8B7100B71732 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 639AAAD6165B8B7100B71732 /* UIKit.framework */; };
 		639AAAD9165B8B7100B71732 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 639AAAD8165B8B7100B71732 /* Foundation.framework */; };
 		639AAADB165B8B7100B71732 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 639AAADA165B8B7100B71732 /* CoreGraphics.framework */; };
@@ -62,9 +63,12 @@
 		63C56DB4165FCD830046A3DE /* 31.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 63C56D93165FCD830046A3DE /* 31.aiff */; };
 		63C56DB5165FCD830046A3DE /* 32.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 63C56D94165FCD830046A3DE /* 32.aiff */; };
 		63CDC586165FEB3E00ABE425 /* userPlayList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63CDC585165FEB3E00ABE425 /* userPlayList.plist */; };
+		63CDC58916625DA000ABE425 /* guide_m.png in Resources */ = {isa = PBXBuildFile; fileRef = 63CDC58816625DA000ABE425 /* guide_m.png */; };
+		63CDC58B16625DB200ABE425 /* play_m.png in Resources */ = {isa = PBXBuildFile; fileRef = 63CDC58A16625DB200ABE425 /* play_m.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6335721F166460BA00A195C6 /* brsm.ppt */ = {isa = PBXFileReference; lastKnownFileType = file; path = brsm.ppt; sourceTree = "<group>"; };
 		639AAAD2165B8B7100B71732 /* BrassSimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrassSimulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		639AAAD6165B8B7100B71732 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		639AAAD8165B8B7100B71732 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -125,6 +129,8 @@
 		63C56D93165FCD830046A3DE /* 31.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = 31.aiff; sourceTree = "<group>"; };
 		63C56D94165FCD830046A3DE /* 32.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = 32.aiff; sourceTree = "<group>"; };
 		63CDC585165FEB3E00ABE425 /* userPlayList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = userPlayList.plist; sourceTree = "<group>"; };
+		63CDC58816625DA000ABE425 /* guide_m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guide_m.png; sourceTree = "<group>"; };
+		63CDC58A16625DB200ABE425 /* play_m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_m.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +192,7 @@
 		639AAADD165B8B7100B71732 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6335721F166460BA00A195C6 /* brsm.ppt */,
 				63C56D73165FCD830046A3DE /* sound */,
 				639AAB0E165B8D1300B71732 /* brsm_img */,
 				639AAB07165B8CEF00B71732 /* defaultPlayList.plist */,
@@ -205,6 +212,8 @@
 		639AAB0E165B8D1300B71732 /* brsm_img */ = {
 			isa = PBXGroup;
 			children = (
+				63CDC58A16625DB200ABE425 /* play_m.png */,
+				63CDC58816625DA000ABE425 /* guide_m.png */,
 				63C56D6F165E3D820046A3DE /* pose.png */,
 				63C56D70165E3D820046A3DE /* stop.png */,
 				639AAB0F165B8D1300B71732 /* f0085330_0204323.jpg */,
@@ -355,6 +364,9 @@
 				63C56DB4165FCD830046A3DE /* 31.aiff in Resources */,
 				63C56DB5165FCD830046A3DE /* 32.aiff in Resources */,
 				63CDC586165FEB3E00ABE425 /* userPlayList.plist in Resources */,
+				63CDC58916625DA000ABE425 /* guide_m.png in Resources */,
+				63CDC58B16625DB200ABE425 /* play_m.png in Resources */,
+				63357220166460BA00A195C6 /* brsm.ppt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

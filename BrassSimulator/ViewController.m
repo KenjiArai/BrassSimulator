@@ -10,6 +10,8 @@
 
 static const int NOTE_NUM = 33;
 static const int ICON_NUM = 3;
+static const int ICON_HEIGHT_AJST = 60;
+static const int ICON_V_BLANK = 330;
 
 @interface ViewController ()
 {
@@ -64,7 +66,7 @@ static const int ICON_NUM = 3;
         [soundNote[i] play];
     }
     
-    int idxMelody = 2;
+    int idxMelody = 1;
     mNote = [[NSArray alloc] init];
     
     NSString *mPath = [[NSBundle mainBundle] pathForResource:@"userPlayList" ofType:@"plist"];
@@ -101,12 +103,12 @@ static const int ICON_NUM = 3;
     for (int idxLeng = 0; idxLeng < [mLength count]; idxLeng++) {
         totalLength += [mLength[idxLeng] doubleValue];
     }
-    float scrollHeight =  (totalLength * 60) + 660;
-    float iconY =  scrollHeight - 330;
+    float scrollHeight =  (totalLength * ICON_HEIGHT_AJST) + ICON_V_BLANK *2;
+    float iconY =  scrollHeight - ICON_V_BLANK;
     
     mScrollView.frame = CGRectMake(0, 140, 320, 340);
     mScrollView.contentSize = CGSizeMake(320, scrollHeight);
-    mScrollView.contentOffset = CGPointMake(0.0f, scrollHeight -340);
+    mScrollView.contentOffset = CGPointMake(0.0f, scrollHeight -(ICON_V_BLANK+10));
     
     float totalIconHeight;
     for (int i = 0; i < [mLength count]; i++) {
@@ -135,7 +137,7 @@ static const int ICON_NUM = 3;
                 stretchImage = [image stretchableImageWithLeftCapWidth:13 topCapHeight:10];
                 icon[j].image = stretchImage;
             }
-            icon[j].frame = CGRectMake(0, 0, 27, length * 60);
+            icon[j].frame = CGRectMake(0, 0, 27, length * ICON_HEIGHT_AJST);
             icon[j].center = CGPointMake(verticalPoint[j], iconY -icon[j].frame.size.height /2);
             [mScrollView addSubview:icon[j]];
         }
@@ -227,9 +229,6 @@ static const int ICON_NUM = 3;
     if (idxPlay < mNote.count) {
         int note = [mNote[idxPlay] intValue] + [mScale intValue];
         if (playing && soundNote[note].volume == 0) {
-            if (idxPlay >= 10 && idxPlay <= 14)  {
-                NSLog(@"idxPlay = %d, note = %d", idxPlay, note);
-            }
             [soundNote[note] setCurrentTime:0];
             [soundNote[note] setVolume:1.0];
         }
@@ -263,9 +262,8 @@ static const int ICON_NUM = 3;
         if (playPosition < iconBottom) {
             
 //            int note = [mNote[idxPlay] intValue] + [mScale intValue];
-            int activate = [mActive[idxPlay] intValue];
-            iconTop = iconTop;
-            if (!playing && activate) {
+//            int activate = [mActive[idxPlay] intValue];
+            if (!playing &&  [mActive[idxPlay] intValue]) { // activate) {
                 
 //                [soundNote[note] setCurrentTime:0];
 //                //                if ( ![soundNote[note] isPlaying] ) {
@@ -294,7 +292,7 @@ static const int ICON_NUM = 3;
 //                    iconTop = playPosition - ([mLength[idxPlay] doubleValue] *60 -1);
 //                    iconBottom = playPosition -1;
 //                } else {
-                    iconTop = playPosition - ([mLength[idxPlay] doubleValue] *60 -2);
+                    iconTop = playPosition - ([mLength[idxPlay] doubleValue] * ICON_HEIGHT_AJST -2);
                     iconBottom = playPosition -2;
                     
 //                }
@@ -370,6 +368,16 @@ static const int ICON_NUM = 3;
     
     
     [super dealloc];
+}
+
+- (IBAction)pushGuideMode:(id)sender
+{
+    btnGuideMode.alpha = 0;
+}
+
+- (IBAction)pushPlayMode:(id)sender
+{
+    btnGuideMode.alpha = 1;
 }
 
 - (IBAction)push01:(id)sender
