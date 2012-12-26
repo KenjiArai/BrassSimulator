@@ -8,14 +8,18 @@
 
 #import "AppDelegate.h"
 
-#import "ViewController.h"
+#import "TopViewController.h"
+#import "SelectViewController.h"
+#import "PlayViewController.h"
+#import "CreateViewController.h"
 
 @implementation AppDelegate
 
 - (void)dealloc
 {
     [_window release];
-    [_viewController release];
+    [PlayViewController release];
+    [_masterViewController release];
     [super dealloc];
 }
 
@@ -23,10 +27,20 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
-    self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController" bundle:nil] autorelease];
-    self.window.rootViewController = self.viewController;
+    self.playViewController = [[[PlayViewController alloc] initWithNibName:@"PlayViewController" bundle:nil] autorelease];
+    self.window.rootViewController = self.playViewController;
     [self.window makeKeyAndVisible];
     return YES;
+
+//    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+//    // Override point for customization after application launch.
+//    
+//    _selectViewController = [[[SelectViewController alloc] initWithNibName:@"SelectViewController" bundle:nil] autorelease];
+//    self.masterViewController = [[[UINavigationController alloc] initWithRootViewController:_selectViewController] autorelease];
+//    
+//    self.window.rootViewController = self.masterViewController;
+//    [self.window makeKeyAndVisible];
+//    return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

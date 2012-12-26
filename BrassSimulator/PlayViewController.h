@@ -10,7 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <AVFoundation/AVAudioPlayer.h>
 
-@interface ViewController : UIViewController<UIScrollViewDelegate, UIScrollViewAccessibilityDelegate>
+@interface PlayViewController : UIViewController<UIScrollViewDelegate, UIScrollViewAccessibilityDelegate>
 {
 //    IBOutlet UILabel *melodyTilte;
     
@@ -31,5 +31,9 @@
     IBOutlet UIButton *valve02;
     IBOutlet UIButton *valve03;
 }
+
+@property (strong, nonatomic) id detailItem;
+
+@property (strong, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 
 @end

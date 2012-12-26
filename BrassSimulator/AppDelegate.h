@@ -8,12 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
-@class ViewController;
+@class TopViewController;
+@class SelectViewController;
+@class PlayViewController;
+@class CreateViewController;
+@class MastarViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) ViewController *viewController;
+@property (strong, nonatomic) TopViewController *topViewController;
+@property (strong, nonatomic) SelectViewController *selectViewController;
+@property (strong, nonatomic) PlayViewController *playViewController;
+@property (strong, nonatomic) CreateViewController *createViewController;
+@property (strong, nonatomic) UINavigationController *masterViewController;
+
 
 @end

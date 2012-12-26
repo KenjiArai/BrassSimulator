@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		635AF2F4167F199400CEE97D /* TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 635AF2F3167F199400CEE97D /* TopViewController.m */; };
-		635AF2F9167F1A6F00CEE97D /* TopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 635AF2F8167F1A6F00CEE97D /* TopViewController.xib */; };
+		6352FEF316803C9700F4ACA8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6352FEF216803C9700F4ACA8 /* CoreData.framework */; };
 		639AAAD7165B8B7100B71732 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 639AAAD6165B8B7100B71732 /* UIKit.framework */; };
 		639AAAD9165B8B7100B71732 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 639AAAD8165B8B7100B71732 /* Foundation.framework */; };
 		639AAADB165B8B7100B71732 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 639AAADA165B8B7100B71732 /* CoreGraphics.framework */; };
@@ -70,12 +69,15 @@
 		63CDC586165FEB3E00ABE425 /* userPlayList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63CDC585165FEB3E00ABE425 /* userPlayList.plist */; };
 		63CDC58916625DA000ABE425 /* guide_m.png in Resources */ = {isa = PBXBuildFile; fileRef = 63CDC58816625DA000ABE425 /* guide_m.png */; };
 		63CDC58B16625DB200ABE425 /* play_m.png in Resources */ = {isa = PBXBuildFile; fileRef = 63CDC58A16625DB200ABE425 /* play_m.png */; };
+		63D4BC8A167F3B16006E501F /* TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D4BC48167F2BFC006E501F /* TopViewController.m */; };
+		63D4BC8B167F3B1B006E501F /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D4BC88167F3919006E501F /* MasterViewController.m */; };
+		63D4BC8C167F3B21006E501F /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D4BC89167F3919006E501F /* MasterViewController.xib */; };
+		63D4BC901680092A006E501F /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D4BC8F16800922006E501F /* DetailViewController.xib */; };
+		63D4BC911680093C006E501F /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D4BC8E16800922006E501F /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		635AF2F2167F199400CEE97D /* TopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopViewController.h; path = ../TopViewController.h; sourceTree = "<group>"; };
-		635AF2F3167F199400CEE97D /* TopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopViewController.m; path = ../TopViewController.m; sourceTree = "<group>"; };
-		635AF2F8167F1A6F00CEE97D /* TopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TopViewController.xib; path = ../TopViewController.xib; sourceTree = "<group>"; };
+		6352FEF216803C9700F4ACA8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		639AAAD2165B8B7100B71732 /* BrassSimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrassSimulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		639AAAD6165B8B7100B71732 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		639AAAD8165B8B7100B71732 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -144,6 +146,15 @@
 		63CDC585165FEB3E00ABE425 /* userPlayList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = userPlayList.plist; sourceTree = "<group>"; };
 		63CDC58816625DA000ABE425 /* guide_m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guide_m.png; sourceTree = "<group>"; };
 		63CDC58A16625DB200ABE425 /* play_m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_m.png; sourceTree = "<group>"; };
+		63D4BC47167F2BFC006E501F /* TopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopViewController.h; sourceTree = "<group>"; };
+		63D4BC48167F2BFC006E501F /* TopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopViewController.m; sourceTree = "<group>"; };
+		63D4BC49167F2BFC006E501F /* TopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopViewController.xib; sourceTree = "<group>"; };
+		63D4BC87167F3919006E501F /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		63D4BC88167F3919006E501F /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		63D4BC89167F3919006E501F /* MasterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MasterViewController.xib; sourceTree = "<group>"; };
+		63D4BC8D16800922006E501F /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		63D4BC8E16800922006E501F /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		63D4BC8F16800922006E501F /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6352FEF316803C9700F4ACA8 /* CoreData.framework in Frameworks */,
 				639AAB5F165B8D4D00B71732 /* AVFoundation.framework in Frameworks */,
 				639AAAD7165B8B7100B71732 /* UIKit.framework in Frameworks */,
 				639AAAD9165B8B7100B71732 /* Foundation.framework in Frameworks */,
@@ -181,6 +193,7 @@
 		639AAAD5165B8B7100B71732 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6352FEF216803C9700F4ACA8 /* CoreData.framework */,
 				639AAB5E165B8D4D00B71732 /* AVFoundation.framework */,
 				639AAAD6165B8B7100B71732 /* UIKit.framework */,
 				639AAAD8165B8B7100B71732 /* Foundation.framework */,
@@ -241,9 +254,9 @@
 		63B80EAF167F1D6000DF1470 /* Top */ = {
 			isa = PBXGroup;
 			children = (
-				635AF2F2167F199400CEE97D /* TopViewController.h */,
-				635AF2F3167F199400CEE97D /* TopViewController.m */,
-				635AF2F8167F1A6F00CEE97D /* TopViewController.xib */,
+				63D4BC47167F2BFC006E501F /* TopViewController.h */,
+				63D4BC48167F2BFC006E501F /* TopViewController.m */,
+				63D4BC49167F2BFC006E501F /* TopViewController.xib */,
 			);
 			name = Top;
 			sourceTree = "<group>";
@@ -254,6 +267,12 @@
 				63B80EB1167F1D9800DF1470 /* SelectViewController.h */,
 				63B80EB2167F1D9800DF1470 /* SelectViewController.m */,
 				63B80EB3167F1D9800DF1470 /* SelectViewController.xib */,
+				63D4BC87167F3919006E501F /* MasterViewController.h */,
+				63D4BC88167F3919006E501F /* MasterViewController.m */,
+				63D4BC89167F3919006E501F /* MasterViewController.xib */,
+				63D4BC8D16800922006E501F /* DetailViewController.h */,
+				63D4BC8E16800922006E501F /* DetailViewController.m */,
+				63D4BC8F16800922006E501F /* DetailViewController.xib */,
 			);
 			name = Select;
 			sourceTree = "<group>";
@@ -419,9 +438,10 @@
 				63CDC586165FEB3E00ABE425 /* userPlayList.plist in Resources */,
 				63CDC58916625DA000ABE425 /* guide_m.png in Resources */,
 				63CDC58B16625DB200ABE425 /* play_m.png in Resources */,
-				635AF2F9167F1A6F00CEE97D /* TopViewController.xib in Resources */,
 				63B80EB5167F1D9800DF1470 /* SelectViewController.xib in Resources */,
 				63B80EBC167F279100DF1470 /* CreateViewController.xib in Resources */,
+				63D4BC8C167F3B21006E501F /* MasterViewController.xib in Resources */,
+				63D4BC901680092A006E501F /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,9 +455,11 @@
 				639AAAE3165B8B7100B71732 /* main.m in Sources */,
 				639AAAFD165B8BB400B71732 /* AppDelegate.m in Sources */,
 				639AAAFE165B8BB400B71732 /* PlayViewController.m in Sources */,
-				635AF2F4167F199400CEE97D /* TopViewController.m in Sources */,
 				63B80EB4167F1D9800DF1470 /* SelectViewController.m in Sources */,
 				63B80EBB167F279100DF1470 /* CreateViewController.m in Sources */,
+				63D4BC8A167F3B16006E501F /* TopViewController.m in Sources */,
+				63D4BC8B167F3B1B006E501F /* MasterViewController.m in Sources */,
+				63D4BC911680093C006E501F /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

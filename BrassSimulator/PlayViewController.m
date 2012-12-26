@@ -6,14 +6,14 @@
 //  Copyright (c) 2012年 KenjiArai. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "PlayViewController.h"
 
 static const int NOTE_NUM = 33;
 static const int ICON_NUM = 3;
 static const int ICON_HEIGHT_AJST = 60;
 static const int ICON_V_BLANK = 330;
 
-@interface ViewController ()
+@interface PlayViewController ()
 {
     AVAudioPlayer *soundClick;
     UIView *v;
@@ -22,6 +22,9 @@ static const int ICON_V_BLANK = 330;
     NSTimer *playTimer;
     
     AVAudioPlayer *soundNote[NOTE_NUM];
+
+    NSArray *fingeringToNote;
+    NSMutableArray *melodyFingering;
     NSMutableArray *melodyIcon;
     UIImageView *firstIcon;
     
@@ -35,6 +38,8 @@ static const int ICON_V_BLANK = 330;
 
     int idxPlay;
     bool playing;
+    bool tap[ICON_NUM];
+    int deff[ICON_NUM];
     
     float playPosition;
     
@@ -46,7 +51,29 @@ static const int ICON_V_BLANK = 330;
 }
 @end
 
-@implementation ViewController
+@implementation PlayViewController
+
+#pragma mark - Managing the detail item
+
+- (void)setDetailItem:(id)newDetailItem
+{
+    if (_detailItem != newDetailItem) {
+        [_detailItem release];
+        _detailItem = [newDetailItem retain];
+        
+        // Update the view.
+        [self configureView];
+    }
+}
+
+- (void)configureView
+{
+    // Update the user interface for the detail item.
+    
+    if (self.detailItem) {
+        self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"timeStamp"] description];
+    }
+}
 
 - (void)viewDidLoad
 {
@@ -54,6 +81,8 @@ static const int ICON_V_BLANK = 330;
     
     NSString *noteName;
     NSString *path;
+    
+    self.view.multipleTouchEnabled = YES;
     
     for (int i = 0; i < NOTE_NUM; i++) {
         noteName = [NSString stringWithFormat:@"%02d", i];
@@ -88,9 +117,9 @@ static const int ICON_V_BLANK = 330;
 
 - (void)createNote
 {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"fingeringList" ofType:@"plist"];
-    NSArray *fingeringToNote = [NSArray arrayWithContentsOfFile:path];
     int fingering[ICON_NUM];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"fingeringList" ofType:@"plist"];
+    fingeringToNote = [NSArray arrayWithContentsOfFile:path];
     
     melodyIcon = [[NSMutableArray alloc] init];
     
@@ -110,6 +139,8 @@ static const int ICON_V_BLANK = 330;
     mScrollView.contentSize = CGSizeMake(320, scrollHeight);
     mScrollView.contentOffset = CGPointMake(0.0f, scrollHeight -(ICON_V_BLANK+10));
     
+    melodyFingering = [[NSMutableArray array] retain];
+    
     float totalIconHeight;
     for (int i = 0; i < [mLength count]; i++) {
         
@@ -118,10 +149,11 @@ static const int ICON_V_BLANK = 330;
         int active = [mActive[i] intValue];
         UIImage *image;
         UIImage *stretchImage;
-        
+        [melodyFingering addObject:fingeringToNote[note]];
         fingering[0] = [fingeringToNote[note][0] intValue];
         fingering[1] = [fingeringToNote[note][1] intValue];
         fingering[2] = [fingeringToNote[note][2] intValue];
+//        NSString *f = [NSString stringWithFormat:@"%d%d%d", fingering[0], fingering[1], fingering[2]];
         
         UIImageView *icon[ICON_NUM];
         for (int j = 0; j < ICON_NUM; j++) {
@@ -206,11 +238,12 @@ static const int ICON_V_BLANK = 330;
             iconBottom = iconTop + img.frame.size.height;
             if (iconBottom <= playPosition) {
                 idxPlay = i;
+                currentIcon = melodyIcon[i];
                 firstIcon = img;
                 break;
             }
         }
-        float timerInterval = 1.0 / ([mTempo intValue] / 2.0);
+        float timerInterval = 1.0 / 60;
         scrollTimer = [[NSTimer scheduledTimerWithTimeInterval:timerInterval
                                                        target:self
                                                      selector:@selector(timerDidFire:)
@@ -236,11 +269,13 @@ static const int ICON_V_BLANK = 330;
 }
 - (void)timerDidFire:(NSTimer*)timer
 {
+    
+    float aa = [mTempo intValue] / 60;
     CGPoint p = mScrollView.contentOffset;
-    p.y -= 2;
+    p.y -= aa;
     mScrollView.contentOffset = p;
-    iconTop += 2;
-    iconBottom += 2;
+//    iconTop += aa;
+//    iconBottom += aa;
     
 //    if ( !isTimerDidFireSetup ) {
 //        currentIcon = melodyIcon[idxPlay];
@@ -257,8 +292,9 @@ static const int ICON_V_BLANK = 330;
         }
     } else {
         
-//        iconTop =  currentIcon.frame.origin.y - p.y;
-//        iconBottom = iconTop + currentIcon.frame.size.height;
+//        currentIcon = melodyIcon[idxPlay];
+        iconTop =  currentIcon.frame.origin.y - p.y;
+        iconBottom = iconTop + currentIcon.frame.size.height;
         if (playPosition < iconBottom) {
             
 //            int note = [mNote[idxPlay] intValue] + [mScale intValue];
@@ -275,8 +311,6 @@ static const int ICON_V_BLANK = 330;
 //                mScrollView.contentOffset = p;
 //                iconTop += 1;
 //                iconBottom += 1;
-
-                
             }
         }
         if (playPosition < iconTop) {
@@ -288,13 +322,17 @@ static const int ICON_V_BLANK = 330;
             idxPlay++;
             if ( idxPlay < mNote.count ) {
                 
+                currentIcon = melodyIcon[idxPlay];
+                iconTop =  currentIcon.frame.origin.y - p.y;
+                iconBottom = iconTop + [mLength[0] doubleValue] *60;
+
 //                if (iconTop -playPosition == 1) {
 //                    iconTop = playPosition - ([mLength[idxPlay] doubleValue] *60 -1);
 //                    iconBottom = playPosition -1;
 //                } else {
-                    iconTop = playPosition - ([mLength[idxPlay] doubleValue] * ICON_HEIGHT_AJST -2);
-                    iconBottom = playPosition -2;
-                    
+//                    iconTop = playPosition - ([mLength[idxPlay] doubleValue] * ICON_HEIGHT_AJST -aa);
+//                    iconBottom = playPosition -aa;
+                
 //                }
 //                currentIcon = melodyIcon[idxPlay];
 //                iconTop = currentIcon.frame.origin.y - p.y;
@@ -380,15 +418,61 @@ static const int ICON_V_BLANK = 330;
     btnGuideMode.alpha = 1;
 }
 
-- (IBAction)push01:(id)sender
+- (IBAction)valveDown:(id)sender
 {
-    for (int i = 0; i < NOTE_NUM; i++) {
-        
-        //再生中は停止する
-        [soundNote[i] setVolume:0];
-        [soundNote[i] setCurrentTime:0];
+    int idx;
+    int deffValue = 0;
+    if (sender == valve01.self) {
+        idx = 0;
+        deffValue = 2;
+    } else if (sender == valve02.self) {
+        idx = 1;
+        deffValue = 1;
+    } else if (sender == valve03.self) {
+        idx = 2;
+        deffValue = 3;
     }
-    [soundNote[0] setVolume:1.0];
+    
+    tap[idx] = true;
+    if ([[[melodyFingering objectAtIndex:idxPlay] objectAtIndex:0] intValue] == 0) {
+        deff[idx] = deffValue;
+    }
+    NSLog(@"valve = %d, deff = %d", idx, deffValue);
+
+}
+
+- (IBAction)valveUp:(id)sender
+{
+
+    int idx;
+    int deffValue = 0;
+    
+    if (sender == valve01.self) {
+        idx = 0;
+        deffValue = -2;
+    } else if (sender == valve02.self) {
+        idx = 1;
+        deffValue = -1;
+    } else if (sender == valve03.self) {
+        idx =2;
+        deffValue = -3;
+    }
+    
+    tap[idx] = false;
+    if ([[[melodyFingering objectAtIndex:idxPlay] objectAtIndex:0] intValue] == 1) {
+        deff[idx] = deffValue;
+    }
+    NSLog(@"valve = %d, deff = %d", idx, deffValue);
+
+}
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.title = NSLocalizedString(@"Detail", @"Detail");
+    }
+    return self;
 }
 
 - (void)didReceiveMemoryWarning
